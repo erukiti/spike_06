@@ -16,10 +16,12 @@ var path = require('path');
 var tslint = require('gulp-tslint');
 var beautifier = require('gulp-jsbeautifier');
 var shell = require('gulp-shell');
+var plato = require('gulp-plato')
 
 var buildConfig = Object.create(webpackConfig);
 buildConfig.entry = {
   site: ["./app/js/site.js"],
+  index: ["./compiled_app/js/index.js"]
 };
 buildConfig.output = {
   path: path.join(__dirname, 'dist'),
@@ -36,13 +38,8 @@ testConfig.output = {
 }
 
 
-gulp.task('default', function () {
-  runSeq('clean', 'typescripts', 'webpack-dev-server');
-});
-
-gulp.task('build', function () {
-  runSeq('clean', 'lint', 'typescripts', 'test', 'doc', 'webpack');
-});
+gulp.task('default', ['webpack-dev-server']);
+gulp.task('build', ['lint', 'test', 'metrics', 'doc', 'webpack', 'copy']);
 
 gulp.task('format', function() {
   gulp
@@ -51,7 +48,7 @@ gulp.task('format', function() {
 })
 
 gulp.task('clean', function () {
-  del(['dist/*', 'compiled_app/**', 'compiled_test/**']);
+  del(['dist/*', 'compiled_app/*', 'compiled_test/*']);
 });
 
 gulp.task('lint', function () {
@@ -61,7 +58,7 @@ gulp.task('lint', function () {
     .pipe(tslint.report('prose'));
 });
 
-gulp.task('typescripts', function () {
+gulp.task('ts-app', ['clean'], function () {
   gulp
     .src(['./app/**/*.ts'])
     .pipe(plumber())
@@ -71,7 +68,9 @@ gulp.task('typescripts', function () {
       module: "commonjs"
     }))
     .pipe(gulp.dest('compiled_app'));
+});
 
+gulp.task('ts-test', ['clean'], function () {
   gulp
     .src(['./test/**/*.ts'])
     .pipe(plumber())
@@ -83,7 +82,19 @@ gulp.task('typescripts', function () {
     .pipe(gulp.dest('compiled_test'));
 });
 
-gulp.task('webpack-dev-server', function () {
+gulp.task('copy', function() {
+  gulp
+    .src('./app/**/*.html')
+    .pipe(gulp.dest('./dist'))
+});
+
+gulp.task('metrics', ['ts-app'], function() {
+  gulp
+    .src('./compiled_app/**/*.js')
+    .pipe(plato('report'))
+});
+
+gulp.task('webpack-dev-server', ['ts-app'], function () {
   buildConfig.devtool = 'eval';
   buildConfig.debug = true;
   buildConfig.plugins = [
@@ -109,12 +120,12 @@ gulp.task('doc', function () {
     .pipe(gulp.dest("./doc"));
 });
 
-gulp.task('test', function() {
+gulp.task('test', ['ts-app', 'ts-test'], function() {
   webpack(testConfig, function(err, stats) {
     if (err) throw new gutil.PluginError('test', err);
 
     gulp
-      .src("./compiled_test/**/*")
+      .src("./tmp/*.js")
       .pipe(mocha({reporter: 'dot'}));
   })
 });

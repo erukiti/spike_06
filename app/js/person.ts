@@ -1,8 +1,17 @@
 'use strict';
 
+/**
+ * @class
+ */
 export class Person {
-    fullname: string;
     constructor(public firstname: string, public lastname: string) {
-        this.fullname = firstname + " " + lastname;
+
+    }
+
+    /**
+     * @method
+     */
+    fullname(): String {
+      return this.firstname + " " + this.lastname;
     }
 }
