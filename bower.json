@@ -1,0 +1,13 @@
+{
+  "name": "dam_front00",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "dt-mocha": "~1.9.0"
+  }
+}
