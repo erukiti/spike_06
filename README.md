@@ -20,8 +20,11 @@ $ npm install -g gulp typescript-formatter tsd@next
 
 ```sh
 $ npm install
-$ tsd install
+$ tsd reinstall
 ```
+
+注意: tsd reinstall で 403 エラーが出る場合、
+http://stackoverflow.com/questions/20130681/setting-github-api-token-for-homebrew
 
 使い方
 ------
