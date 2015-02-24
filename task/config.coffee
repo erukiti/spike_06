@@ -24,7 +24,7 @@ buildConfig =
 
 testConfig = 
     entry:
-        test: ["./compiled_test/js/person.js"]
+        test: ["./compiled_test/test/js/person.js"]
     output:
         path: path.join __dirname, '..', 'tmp'
         filename: "[name].bundle.js"

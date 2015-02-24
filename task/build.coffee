@@ -9,9 +9,9 @@ gulp.task 'build', () ->
     'clean'
     'lint'
     'typescripts'
+    'webpack'
     'test'
     'doc'
     'metrics'
-    'webpack'
     'copy'
   )

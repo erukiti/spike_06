@@ -1,30 +1,23 @@
 gulp = require 'gulp'
 del = require 'del'
-typescript = require 'gulp-typescript'
 plumber = require 'gulp-plumber'
+shell = require 'gulp-shell'
 
 config = require './config'
 
 # タイプスクリプトコンパイルタスク
-gulp.task 'typescripts', () -> 
+
+
+gulp.task 'typescripts', () ->
   del ['./compiled_app', './compiled_test']
 
   gulp
     .src './app/**/*.ts'
     .pipe plumber()
-    .pipe typescript(
-      declarationFiles: true
-      noExternalResolve: true
-      module: "commonjs"
-    )
-    .pipe gulp.dest './compiled_app'
+    .pipe shell './node_modules/.bin/tsc -m commonjs --outDir ./compiled_app/js <%= file.path %>'
 
   gulp
     .src './test/**/*.ts'
     .pipe plumber()
-    .pipe typescript(
-      declarationFiles: true
-      noExternalResolve: true
-      module: "commonjs"
-    )
-    .pipe gulp.dest './compiled_test'
+    .pipe shell './node_modules/.bin/tsc -m commonjs --outDir ./compiled_test <%= file.path %>'
+

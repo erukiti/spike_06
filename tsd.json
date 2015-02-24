@@ -10,6 +10,15 @@
     },
     "mocha/mocha.d.ts": {
       "commit": "2272849a06f2b68205611665e6b86ffec58c1e10"
+    },
+    "power-assert/power-assert.d.ts": {
+      "commit": "2272849a06f2b68205611665e6b86ffec58c1e10"
+    },
+    "empower/empower.d.ts": {
+      "commit": "2272849a06f2b68205611665e6b86ffec58c1e10"
+    },
+    "power-assert-formatter/power-assert-formatter.d.ts": {
+      "commit": "2272849a06f2b68205611665e6b86ffec58c1e10"
     }
   }
 }

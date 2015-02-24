@@ -5,4 +5,4 @@ shell = require 'gulp-shell'
 gulp.task 'format', () ->
   gulp
     .src './app/**/*.ts', {read: false}
-    .pipe shell 'tsfmt -r <%= file.path %>'
+    .pipe shell './node_modules/.bin/tsfmt -r <%= file.path %>'

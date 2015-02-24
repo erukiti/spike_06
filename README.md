@@ -15,16 +15,12 @@ TypeScriptのプロジェクトのたたき台
 ------------
 
 ```sh
-$ npm install -g gulp typescript-formatter tsd@next
+$ npm install -g gulp
 ```
 
 ```sh
 $ npm install
-$ tsd reinstall
 ```
-
-注意: tsd reinstall で 403 エラーが出る場合、
-http://stackoverflow.com/questions/20130681/setting-github-api-token-for-homebrew
 
 使い方
 ------
@@ -61,13 +57,10 @@ TODO
 ----
 
 * 色々と問題あり
-  * ユニットテストで、何故か型情報ファイルが読み込めない
-  * webpack-dev-server での build で謎の not found.
-
+  * power-assert が働いてないっぽい
 * まじめにクラスを書いてみる
 * まじめにドキュメントを書いてみる
 * まじめにテストを書いてみる
-* 開発で watch してテストを自動で走らせる
 * tslint
   * 設定
 * TS フォーマッタ

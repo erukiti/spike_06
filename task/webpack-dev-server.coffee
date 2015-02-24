@@ -8,12 +8,10 @@ config = require './config'
 buildConfig = config.buildConfig
 
 # デバッグ用オンラインサーバ
-gulp.task 'webpack-dev-server', (callback) ->
+gulp.task 'webpack-dev-server', () ->
   buildConfig.devtool = 'eval'
   buildConfig.debug = true
   buildConfig.plugins = []
-
-  console.dir buildConfig
 
   s = new WebpackDevServer(webpack(buildConfig), {stats: {colors: true}, publicPath: '/'})
   s.listen 8080, '0.0.0.0', (err) ->
@@ -24,4 +22,3 @@ gulp.task 'webpack-dev-server', (callback) ->
       .src './app/index.html'
       .pipe(open('', {url: 'http://localhost:8080/app/index.html'}))
 
-  callback

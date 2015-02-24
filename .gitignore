@@ -5,6 +5,5 @@ compiled_app/
 compiled_test/
 bower_components/
 npm-debug.log
-typings/
 report/
 tmp/
