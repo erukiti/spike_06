@@ -56,8 +56,8 @@ $ gulp format
 TODO
 ----
 
-* 色々と問題あり
-  * power-assert が働いてないっぽい
+* まだ少し問題が残ってるかも
+  * build 時の WARNING in site.bundle.js from UglifyJs
 * まじめにクラスを書いてみる
 * まじめにドキュメントを書いてみる
 * まじめにテストを書いてみる

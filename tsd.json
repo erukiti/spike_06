@@ -19,6 +19,9 @@
     },
     "power-assert-formatter/power-assert-formatter.d.ts": {
       "commit": "2272849a06f2b68205611665e6b86ffec58c1e10"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "2272849a06f2b68205611665e6b86ffec58c1e10"
     }
   }
 }
