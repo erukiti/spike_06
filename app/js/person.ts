@@ -12,6 +12,6 @@ export class Person {
      * @method
      */
     fullname(): String {
-      return this.firstname + " " + this.lastname;
+        return this.firstname + " " + this.lastname;
     }
 }

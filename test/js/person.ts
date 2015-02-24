@@ -1,5 +1,4 @@
-/// <reference path="../../typings/tsd.d.ts"/>
-require('mocha');
+/* /// <reference path="../../typings/tsd.d.ts"/> 
 
 import misc = require('../../app/js/person');
 
@@ -18,3 +17,4 @@ describe('Person', function(){
         });
     });
 });
+*/
