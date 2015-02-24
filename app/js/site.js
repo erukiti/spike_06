@@ -1,3 +1,3 @@
 require('../style/style.less');
-require('font-awesome/css/font-awesome.css');
+require('../../bower_components/bootstrap-material-design/dist/css/material.css');
 

@@ -1,0 +1,19 @@
+{
+  "name": "spike_06",
+  "version": "0.0.0",
+  "homepage": "https://github.com/erukiti/spike_06",
+  "authors": [
+    "erukiti <erukiti@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "~0.2.2"
+  }
+}
