@@ -2,7 +2,7 @@ gulp = require 'gulp'
 espower = require 'gulp-espower'
 del = require 'del'
 
-gulp.task 'powered', () ->
+gulp.task 'powered', ['typescripts'], () ->
   del './powered/'
 
   gulp

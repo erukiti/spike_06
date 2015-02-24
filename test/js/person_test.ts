@@ -2,16 +2,16 @@
 import misc = require('../../app/js/person');
 import assert = require('power-assert');
 
-describe('Person', function(){
-    describe('.fullname', function(){
-        it('test', function(){
+describe('Person', () => {
+    describe('.fullname', () => {
+        it('failed', () => {
             var hoge = new misc.Person("hoge", "fuga");
-            assert(hoge.fullname() === "fuga hoge");
+            assert(hoge.fullname() === "hoge fuga ");
         });
 
-        it('should return index when the value is present', function(){
-            var zero = 0, two = 2;
-            assert(zero === two);
+        it('succeeded', () => {
+            var hoge = new misc.Person("hoge", "fuga");
+            assert(hoge.fullname() === "hoge fuga");
         });
     });
 });

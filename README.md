@@ -58,6 +58,8 @@ TODO
 
 * まだ少し問題が残ってるかも
   * build 時の WARNING in site.bundle.js from UglifyJs
+  * watch タスク周りの整備
+  * webpack-dev-server での ts watch
 * まじめにクラスを書いてみる
 * まじめにドキュメントを書いてみる
 * まじめにテストを書いてみる
