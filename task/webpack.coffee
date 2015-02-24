@@ -3,6 +3,7 @@ webpack = require 'webpack'
 
 config = require './config'
 
+# webpack のコンパイルタスク
 gulp.task 'webpack', () ->
   buildConfig = config.buildConfig
   buildConfig.plugins = [

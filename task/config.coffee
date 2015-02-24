@@ -1,5 +1,6 @@
 path = require 'path'
 _ = require 'lodash'
+
 webpack = 
     module:
         loaders: [
@@ -18,14 +19,14 @@ buildConfig =
         site: ["./app/js/site.js"]
         index: ["./compiled_app/js/index.js"]
     output:
-        path: path.join(__dirname, 'dist')
+        path: path.join __dirname, '..', 'dist'
         filename: "[name].bundle.js"
 
 testConfig = 
     entry:
         test: ["./compiled_test/js/person.js"]
     output:
-        path: path.join(__dirname, 'tmp')
+        path: path.join __dirname, '..', 'tmp'
         filename: "[name].bundle.js"
 
 module.exports.buildConfig = _.extend(_.cloneDeep(webpack), buildConfig)

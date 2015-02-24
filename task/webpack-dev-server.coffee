@@ -7,6 +7,7 @@ open = require 'gulp-open'
 config = require './config'
 buildConfig = config.buildConfig
 
+# デバッグ用オンラインサーバ
 gulp.task 'webpack-dev-server', (callback) ->
   buildConfig.devtool = 'eval'
   buildConfig.debug = true

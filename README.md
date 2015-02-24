@@ -62,16 +62,12 @@ TODO
 
 * 色々と問題あり
   * ユニットテストで、何故か型情報ファイルが読み込めない
-  * doc 生成うまくいったりいかなかったり
   * webpack-dev-server での build で謎の not found.
-  * webpack での build で謎の notfound.
 
 * まじめにクラスを書いてみる
 * まじめにドキュメントを書いてみる
 * まじめにテストを書いてみる
 * 開発で watch してテストを自動で走らせる
-* gulpfile をリファクタリングする
-  * 分割
 * tslint
   * 設定
 * TS フォーマッタ

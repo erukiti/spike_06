@@ -1,3 +1,4 @@
+
 import misc = require("./person");
 var hoge = new misc.Person("fugao", "hogeta");
 

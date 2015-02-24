@@ -4,6 +4,7 @@ mocha = require 'gulp-mocha'
 
 config = require './config'
 
+# ユニットテストタスク
 gulp.task 'test', () ->
   webpack config.testConfig, (err, stats) ->
     if err
