@@ -3,6 +3,7 @@ import misc = require('../../app/js/person');
 import assert = require('power-assert');
 
 describe('Person', () => {
+
     describe('.fullname', () => {
         it('failed', () => {
             var hoge = new misc.Person("hoge", "fuga");

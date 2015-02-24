@@ -5,8 +5,8 @@
 import misc = require("./person");
 var hoge = new misc.Person("fugao", "hogeta");
 
-function greetings(person: misc.Person) {
-    console.log("Hello, " + person.fullname());
+export function greetings(person: misc.Person) {
+  document.getElementById("greetings").innerHTML = "Hello, " + person.fullname();
 }
 
 greetings(hoge);

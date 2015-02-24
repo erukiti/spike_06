@@ -5,7 +5,7 @@ shell = require 'gulp-shell'
 
 config = require './config'
 
-# タイプスクリプトコンパイルタスク
+# TypeScript コンパイルタスク
 
 
 gulp.task 'typescripts', () ->

@@ -7,11 +7,6 @@ config = require './config'
 gulp.task 'build', () ->
   runSeq(
     'clean'
-    'lint'
-    'typescripts'
-    'webpack'
-    'test'
-    'doc'
-    'metrics'
+    ['lint', 'webpack', 'test', 'doc', 'metrics']
     'copy'
   )

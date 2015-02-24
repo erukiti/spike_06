@@ -1,11 +1,14 @@
 gulp = require 'gulp'
 webpack = require 'webpack'
 gutil = require 'gulp-util'
+del = require 'del'
 
 config = require './config'
 
 # webpack のコンパイルタスク
-gulp.task 'webpack', () ->
+gulp.task 'webpack', ['typescripts'], () ->
+  del './dist'
+
   buildConfig = config.buildConfig
   buildConfig.plugins = [
     new webpack.DefinePlugin

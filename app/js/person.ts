@@ -2,16 +2,22 @@
 
 /// <reference path="../../typings/tsd.d.ts"/> 
 
-/**
- * @class
- */
 export class Person {
+
+    /**
+     * 人クラス
+     * @class Person
+     * @constructor
+     * @param {string} firstname
+     * @param {string} lastname
+     */
     constructor(public firstname: string, public lastname: string) {
 
     }
 
     /**
-     * @method
+     * フルネームを取り出す
+     * @method fullname
      */
     fullname(): String {
         return this.firstname + " " + this.lastname;
