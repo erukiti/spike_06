@@ -14,6 +14,7 @@
   "homepage": "https://github.com/erukiti/spike_05",
   "dependencies": {
     "bootstrap": "^3.3.2",
+    "bower": "^1.3.12",
     "bundle-loader": "~0.5.3",
     "coffee-script": "~1.9.1",
     "css-loader": "^0.9.1",
@@ -40,7 +41,7 @@
     "lodash": "~3.3.0",
     "mocha": "~2.1.0",
     "mocha-loader": "~0.7.1",
-    "power-assert": "~0.10.2",
+    "power-assert": "^0.10.2",
     "require-dir": "~0.1.0",
     "run-sequence": "~1.0.2",
     "style-loader": "^0.8.3",
@@ -48,7 +49,6 @@
     "typescript-formatter": "~0.2.1",
     "url-loader": "^0.5.5",
     "webpack": "^1.5.3",
-    "webpack-dev-server": "~1.7.0",
-    "power-assert": "^0.10.2"
+    "webpack-dev-server": "~1.7.0"
   }
 }

@@ -6,7 +6,7 @@ describe('Person', function () {
             var hoge = new misc.Person('hoge', 'fuga');
             assert(assert._expr(assert._capt(assert._capt(assert._capt(hoge, 'arguments/0/left/callee/object').fullname(), 'arguments/0/left') === 'hoge fuga ', 'arguments/0'), {
                 content: 'assert(hoge.fullname() === "hoge fuga ")',
-                filepath: '/Users/erukiti/work/spike_06/compiled_test/test/js/person_test.js',
+                filepath: '/Users/shunsuke_sasaki/work/spike_06/compiled_test/test/js/person_test.js',
                 line: 8
             }));
         });
@@ -14,7 +14,7 @@ describe('Person', function () {
             var hoge = new misc.Person('hoge', 'fuga');
             assert(assert._expr(assert._capt(assert._capt(assert._capt(hoge, 'arguments/0/left/callee/object').fullname(), 'arguments/0/left') === 'hoge fuga', 'arguments/0'), {
                 content: 'assert(hoge.fullname() === "hoge fuga")',
-                filepath: '/Users/erukiti/work/spike_06/compiled_test/test/js/person_test.js',
+                filepath: '/Users/shunsuke_sasaki/work/spike_06/compiled_test/test/js/person_test.js',
                 line: 12
             }));
         });

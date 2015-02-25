@@ -20,16 +20,27 @@ $ npm install -g gulp
 
 ```sh
 $ npm install
+$ gulp install
 ```
 
 使い方
 ------
 
-### 開発
+### 開発1
 
 ```sh
 $ gulp
 ```
+
+ローカルで動かしている場合、自動でブラウザが起動される
+
+### 開発2
+
+```sh
+$ gulp watch
+```
+
+ブラウザは起動されてないのでユニットテストベースで開発するか、dist/index.html をブラウザで開く
 
 ### ビルド
 
