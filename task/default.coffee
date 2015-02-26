@@ -6,6 +6,5 @@ config = require './config'
 # gulp のデフォルトタスク
 gulp.task 'default', () ->
   runSeq(
-    'typescripts'
     'webpack-dev-server'
   )

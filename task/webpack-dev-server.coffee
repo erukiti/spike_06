@@ -8,7 +8,7 @@ config = require './config'
 buildConfig = config.buildConfig
 
 # デバッグ用オンラインサーバ
-gulp.task 'webpack-dev-server', ['typescripts'], () ->
+gulp.task 'webpack-dev-server', ['build:ts'], () ->
   buildConfig.devtool = 'eval'
   buildConfig.debug = true
   buildConfig.plugins = []

@@ -1,5 +1,4 @@
 gulp = require 'gulp'
-del = require 'del'
 plumber = require 'gulp-plumber'
 shell = require 'gulp-shell'
 
@@ -8,9 +7,7 @@ config = require './config'
 # TypeScript コンパイルタスク
 
 
-gulp.task 'typescripts', () ->
-  del ['./compiled_app', './compiled_test']
-
+gulp.task 'build:ts', () ->
   gulp
     .src './app/**/*.ts'
     .pipe plumber()

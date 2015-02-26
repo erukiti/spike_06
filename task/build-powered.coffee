@@ -1,10 +1,7 @@
 gulp = require 'gulp'
 espower = require 'gulp-espower'
-del = require 'del'
 
-gulp.task 'powered', ['typescripts'], () ->
-  del './powered/'
-
+gulp.task 'build:powered', ['build:ts'], () ->
   gulp
     .src './compiled_test/**/*.js'
     .pipe espower()

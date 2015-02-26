@@ -2,7 +2,7 @@ gulp = require 'gulp'
 runSeq = require 'run-sequence'
 
 gulp.task 'watch', () -> 
-  runSeq 'clean', 'webpack', 'test', 'copy'
-  gulp.watch './app/**/*.ts', ['webpack', 'test']
-  gulp.watch './test/**/*.ts', ['webpack', 'test']
+  runSeq ['build:webpack', 'test', 'copy'], 'open:dist'
+  gulp.watch './app/**/*.ts', ['build:webpack', 'test']
+  gulp.watch './test/**/*.ts', ['build:webpack', 'test']
   gulp.watch './app/**/*.html', ['copy']
