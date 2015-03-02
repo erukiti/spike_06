@@ -4,7 +4,8 @@ runSeq = require 'run-sequence'
 config = require './config'
 
 # gulp のデフォルトタスク
-gulp.task 'default', () ->
+gulp.task 'default', (cb) ->
   runSeq(
     'webpack-dev-server'
   )
+  cb()

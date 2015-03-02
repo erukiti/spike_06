@@ -5,15 +5,17 @@ WebpackDevServer = require 'webpack-dev-server'
 open = require 'gulp-open'
 
 config = require './config'
-buildConfig = config.buildConfig
 
 # デバッグ用オンラインサーバ
-gulp.task 'webpack-dev-server', ['build:ts'], () ->
-  buildConfig.devtool = 'eval'
-  buildConfig.debug = true
-  buildConfig.plugins = []
+gulp.task 'webpack-dev-server', ['build:ts:app'], (cb) ->
+  config.devtool = 'eval'
+  config.debug = true
+  config.plugins = []
 
-  s = new WebpackDevServer(webpack(buildConfig), {
+  gulp.watch './app/**/*.ts', ['test', 'build:ts:app']
+  gulp.watch './test/**/*.ts', ['test']
+
+  s = new WebpackDevServer(webpack(config), {
     stats: {colors: true}
     publicPath: '/'
     hot: true
@@ -27,5 +29,5 @@ gulp.task 'webpack-dev-server', ['build:ts'], () ->
       .src './app/index.html'
       .pipe(open('', {url: 'http://localhost:8080/index.html'}))
 
-  gulp.watch './app/**/*.ts', ['test', 'typescripts']
-  gulp.watch './test/**/*.ts', ['test']
+    cb()
+

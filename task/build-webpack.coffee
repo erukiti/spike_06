@@ -1,23 +1,12 @@
 gulp = require 'gulp'
 webpack = require 'webpack'
-gutil = require 'gulp-util'
+ts = require 'gulp-typescript'
+plumber = require 'gulp-plumber'
 
 config = require './config'
 
 # webpack のコンパイルタスク
-gulp.task 'build:webpack', ['build:ts'], () ->
-  buildConfig = config.buildConfig
-  buildConfig.plugins = [
-    new webpack.DefinePlugin
-      'process.env':
-        'NODE_ENV': JSON.stringify 'production'
-    new webpack.optimize.DedupePlugin
-    new webpack.optimize.UglifyJsPlugin
-  ]
-
-  webpack buildConfig, (err, stats) ->
-    if err
-      throw new gutil.PluginError 'build', err
-
-    gutil.log '[build]', stats.toString {colors: true}
-
+gulp.task 'build:webpack', ['build:ts:app'], (cb) ->
+  webpack config, (err, stats) ->
+    throw err if err
+    cb()

@@ -1,5 +1,5 @@
 path = require 'path'
-_ = require 'lodash'
+webpack = require 'webpack'
 
 webpack = 
     module:
@@ -12,20 +12,15 @@ webpack =
             {test: /[\/](localforage|indexeddb|localstorage|websql)\.js$/, loader: 'imports?this=>window'}
         ]
 
-buildConfig =
     entry:
         site: ["./app/js/site.js"]
         index: ["./compiled_app/js/index.js"]
+
     output:
         path: path.join __dirname, '..', 'dist'
         filename: "[name].bundle.js"
 
-testConfig = 
-    entry:
-        test: ["./compiled_test/test/js/person_test.js"]
-    output:
-        path: path.join __dirname, '..', 'tmp'
-        filename: "[name].bundle.js"
+    resolve:
+        extensions: ['', 'js', 'ts']
 
-module.exports.buildConfig = _.extend(_.cloneDeep(webpack), buildConfig)
-module.exports.testConfig = _.extend(_.cloneDeep(webpack), testConfig)
+module.exports = webpack
